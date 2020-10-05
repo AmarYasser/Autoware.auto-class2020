@@ -33,3 +33,11 @@ First implemention of ADE by checking 3D perception stack
 - [lecture 1](https://gitlab.com/ApexAI/autowareclass2020/-/blob/master/lectures/01_DevelopmentEnvironment/devenv.md)
 
 [![Demo](http://img.youtube.com/vi/vzfrloH_Gs4/0.jpg)](http://www.youtube.com/watch?v=vzfrloH_Gs4 "Demo - Autoware.Auto 3D perception stack")
+
+## Autonomous Slack
+
+Autoware.Ai is like the skeleton for Autowar.Auto. It contains the main software algorithms but supports ROS1.
+
+Autowar.Auto is the next generation with more robust, clean and reliable code and supports ROS2.
+
+![Autoware.auto AD Full Stack](./Images/Full_stack.png)
