@@ -18,7 +18,7 @@ Follow installtion [here](https://ade-cli.readthedocs.io/en/latest/install.html)
 
 **Notes**
 
-- After docker installtion, docker and `ade start` command should be started with root privilages 
+- After docker installtion, docker and `ade start` command should be started with root privileges 
 so you should do:
 ```
 sudo groupadd docker 
@@ -37,10 +37,32 @@ First implemention of ADE by checking 3D perception stack
 
 [![Demo](http://img.youtube.com/vi/vzfrloH_Gs4/0.jpg)](http://www.youtube.com/watch?v=vzfrloH_Gs4 "Demo - Autoware.Auto 3D perception stack")
 
-## Autonomous Slack
+## Autonomous Stack
 
-Autoware.Ai is like the skeleton for Autowar.Auto. It contains the main software algorithms but supports ROS1.
+Autoware.Ai is like the skelton for Autowar.Auto. It contains the main software algorithms but supports ROS1.
 
 Autowar.Auto is the next generation with more robust, clean and reliable code and supports ROS2.
 
 ![Autoware.auto AD Full Stack](./Images/Full_stack.png)
+
+## LGSVL simulator with ROS2 and Autoware.auto
+
+First  LGSVL simulator implmentation with ADE
+
+
+[![LGSVL simulator with ROS2 and Autoware.auto](http://img.youtube.com/vi/SoF8SptJuPY/0.jpg)](http://www.youtube.com/watch?v=SoF8SptJuPY "LGSVL simulator with ROS2 and Autoware.auto")
+
+**Note**
+
+**Bridging with Autoware.Auto**
+
+LGSVL uses conventions which are not directly aligned with ROS 2 conventions. The full list of behaviors the lgsvl_interface implements is:
+
+- Converts control inputs with CCW positive rotations to the CCW negative inputs the LGSVL simulator expects
+- Provides a mapping from VehicleControlCommand to the RawControlCommand LGSVL expects via parametrizable 1D lookup tables
+To run the lgsvl_interface, enter the following in a new terminal window:
+```
+$ ade enter
+ade$ source /opt/AutowareAuto/setup.bash
+ade$ ros2 run lgsvl_interface lgsvl_interface_exe __params:=/opt/AutowareAuto/share/lgsvl_interface/param/lgsvl.param.yaml
+```
