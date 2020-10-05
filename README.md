@@ -1,8 +1,11 @@
 # Autoware_class20
 Self-Driving Cars with ROS 2 and Autoware 
 
-# Lectures
-Find lectures [here](https://gitlab.com/ApexAI/autowareclass2020/-/tree/master/)
+## Lectures
+
+- MDs and PDF slides from [here](https://gitlab.com/ApexAI/autowareclass2020/-/tree/master/)
+
+- Videos [here](https://www.autoware.org/awf-course)
 
 # Building ADE
 ## Requirments
