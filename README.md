@@ -66,3 +66,38 @@ $ ade enter
 ade$ source /opt/AutowareAuto/setup.bash
 ade$ ros2 run lgsvl_interface lgsvl_interface_exe __params:=/opt/AutowareAuto/share/lgsvl_interface/param/lgsvl.param.yaml
 ```
+
+## Object Detection Stack
+
+Autoware.Auto uses a classical object
+detection stack:
+- Simpler and more robust
+- Geometric and optimization-based
+methods for:
+○ Ground filtering
+○ Clustering
+○ Shape Extraction
+
+![Object Detection Stack](./Images/ObjectDetection.png)
+
+### Test
+
+![Object Detection Test](./Images/ObjectDetection_ADE_Test.png)
+
+Documentation:
+-https://autowarefoundation.gitlab.io/autoware.auto/AutowareAuto/lgsvl.html
+- https://www.lgsvlsimulator.com/docs/vehicles-tab/#how-to-add-a-vehicle
+- lgsvl-sensors.json file for vehicle configuration : https://gitlab.com/autowarefoundation/autoware.auto/AutowareAuto/-/blob/master/lgsvl-sensors.json 
+
+Running command for Object detection:
+ade$ source /opt/AutowareAuto/setup.bash
+ade$ ros2 launch autoware_demos \
+lidar_bounding_boxes_lgsvl.launch.py 
+
+**Note:**
+
+For the lgsvl bridge with ROS2 connection, `ros2-lgsvl-bridge` [package]( 
+https://github.com/lgsvl/ros2-lgsvl-bridge)
+should be cloned and build inside `~/adehome` and then restart ADE
+
+[![Object Detection Test](http://img.youtube.com/vi/sfycsfp0pBA/0.jpg)](http://www.youtube.com/watch?v=sfycsfp0pBA "Object Detection Test")
