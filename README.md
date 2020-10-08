@@ -101,3 +101,45 @@ https://github.com/lgsvl/ros2-lgsvl-bridge)
 should be cloned and build inside `~/adehome` and then restart ADE
 
 [![Object Detection Test](http://img.youtube.com/vi/sfycsfp0pBA/0.jpg)](http://www.youtube.com/watch?v=sfycsfp0pBA "Object Detection Test")
+
+
+## Camera Perception - Lane detection and Ground Projection
+
+Hands-on lab on Camera perception to detect and Project road lanes using ROS2 and Autoware ADE
+
+Repo: https://gitlab.com/ApexAI/autowareclass2020/-/tree/master/code/src/08_Perception_Camera
+
+![Object Detection Test](./Images/LaneDetection.png)
+
+Test:
+
+- enter ADE
+```
+ade start
+ade enter
+```
+- go to project repo
+
+- `source install/setup.bash`
+
+- `sudo apt-get install libopencv-dev` (optionally, if you don't have already libopencv-dev installed )
+
+- open 4 terminals ( inside ade )
+and `source install/setup.bash` ( inside project repo)
+
+- terminal 1 :  init. data_loader node
+`ros2 run lane_detection_data_loader lane_detection_data_loader_node` 
+
+- terminal 2 :  init. projection_node
+`ros2 run lane_detection_projection lane_detection_projection_node`
+
+- terminal 3 :  init. visualization_node
+`ros2 run lane_detection_visualization lane_detection_visualization_node`
+
+- terminal 4 : open RViz
+`rviz2` 
+
+then setup RViz to visualize image and marker topics
+
+
+[![Camera Perception](http://img.youtube.com/vi/rBYVpXurZEI/0.jpg)](http://www.youtube.com/watch?v=rBYVpXurZEI "Camera Perception")
